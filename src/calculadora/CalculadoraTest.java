@@ -3,17 +3,28 @@ package calculadora;
 import static org.junit.Assert.*;
 
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class CalculadoraTest {
-
-	private Calculadora calc;
+//BeforeClass and AfterClass
+//When you have to initialize a complex objects
+	
+	
+	static Calculadora calc;
+	
+	@BeforeClass
+	public static void beforeClass() {
+		System.out.println("beforeClass()");
+		calc = new Calculadora();
+	}
 	
 	@Before
 	public void before() {
 		System.out.println("before();");
-		calc = new Calculadora();
+		calc.clear(); 
 	}
 	
 	@After
@@ -42,14 +53,19 @@ public class CalculadoraTest {
 		assertEquals(expected, result);
 	}
 	
-	//proof unit advanced
-	@Test( expected = ArithmeticException.class )
-	public void testDiv() {
-		calc.div(5,0);
-	}
+//	//proof unit advanced
+//	@Test( expected = ArithmeticException.class )
+//	public void testDiv() {
+//		calc.div(5,0);
+//	}
+//	
+//	@Test(timeout = 100)//miliseconds.
+//	public void testAlgoritmoOptimo() {
+//		calc.enhancedOperation();
+//	}
 	
-	@Test(timeout = 100)//miliseconds.
-	public void testAlgoritmoOptimo() {
-		calc.enhancedOperation();
+	@AfterClass
+	public static void afterClass() {
+		System.out.println("afterClass()");
 	}
 }
