@@ -41,4 +41,15 @@ public class CalculadoraTest {
 		
 		assertEquals(expected, result);
 	}
+	
+	
+	@Test( expected = ArithmeticException.class )
+	public void testDiv() {
+		calc.div(5,0);
+	}
+	
+	@Test(timeout = 100)//miliseconds.
+	public void testAlgoritmoOptimo() {
+		calc.enhancedOperation();
+	}
 }

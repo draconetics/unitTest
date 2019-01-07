@@ -33,4 +33,17 @@ public class Calculadora {
 	public void clear() {
 		result = 0;
 	}
+	
+	public int div(int a, int b) {
+		result = a / b;
+		return result;
+	}
+	
+	public void enhancedOperation(){
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
 }
