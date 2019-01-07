@@ -9,9 +9,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class CalculadoraTest {
-//BeforeClass and AfterClass
-//When you have to initialize a complex objects
-	
 	
 	static Calculadora calc;
 	
