@@ -32,13 +32,14 @@ public class CalculadoraTest {
 	}
 	
 	@Test
-	public void testAnsSum() {
-		System.out.println("ansSum();");
+	public void testAnsSubs() {
+		System.out.println("substracting();");
 		
 		calc = new Calculadora();
-		int result = calc.add(3,2);
-		int expected = 5;
+		int result = calc.sub(3,2);
+		int expected = 1;
 		
 		assertEquals(expected, result);
+		//fail("fail!");
 	}
 }
